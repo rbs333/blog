@@ -1,0 +1,4 @@
+<div *ngFor="let doc of docs">
+    <h2>{{doc.title}}</h2>
+    <div [innerHTML] = "doc.content"></div>
+</div>
