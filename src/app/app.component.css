@@ -1,0 +1,15 @@
+.header {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+}
+
+.header .titlebox {
+    display: flex;
+    flex-direction: column;
+}
+
+.header .titlebox .title {
+    font-size: 2rem;
+}

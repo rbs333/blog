@@ -1,0 +1,24 @@
+<div class="wrapper">
+    <div class="contentBox">
+        <h2>{{content.title}}</h2>
+        <div class="content">
+            <div class="text" [innerHTML]="content.text"></div>
+            <div *ngIf="content.video">
+                <iframe 
+                    class="video"
+                    [src]="content.video | safe"
+                >
+                </iframe>
+            </div>
+
+            <div *ngIf="content.audio">
+                <audio 
+                    class="content" controls 
+                    [src]="content.audio | safe"
+                    type="audio/mpeg"
+                >
+                </audio>
+            </div>
+        </div>
+    </div>
+</div>
