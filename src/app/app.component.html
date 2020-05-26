@@ -1,12 +1,14 @@
-<div class="header stdPad">
-    <div class="titlebox">
-        <span class="title">Virginia Boy Inc.</span>
-        <span class="subtitle">Songs etc. by Robert Shelton</span>
+<div class="gutters">
+    <div class="header stdPad">
+        <div class="titlebox">
+            <span class="title">Virginia Boy Inc.</span>
+            <span class="subtitle">Songs etc. by Robert Shelton</span>
+        </div>
+        <div class="btns">
+            <a href="./resume_robert_shelton.pdf" download="resume_robert_shelton">[bio]</a>
+            <a href="mailto:robes98@vt.edu">[archive]</a>
+        </div>
     </div>
-    <div class="btns">
-        <a href="./resume_robert_shelton.pdf" download="resume_robert_shelton">[bio]</a>
-        <a href="mailto:robes98@vt.edu">[archive]</a>
-    </div>
+    
+    <app-content *ngFor="let c of contentList" [content] = "c"></app-content>
 </div>
-
-<app-content *ngFor="let c of contentList" [content] = "c"></app-content>

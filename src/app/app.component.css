@@ -8,9 +8,23 @@
 .header .titlebox {
     display: flex;
     flex-direction: column;
+    color:  white;
+}
+
+.header a {
+    color: white;
+    text-decoration: none;
+}
+
+.header a:hover {
+    color:  blue;
 }
 
 .header .titlebox .title {
     font-size: 2.5rem;
     font-family: 'Cabin Sketch', cursive;
+}
+
+.gutters {
+    margin: 0 15vw;
 }

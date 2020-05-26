@@ -20,7 +20,7 @@ export class ContentService {
         let contentMap:Content[] = [];
         contents && contents.forEach((content)=>{
           contentMap.push({
-            id: content['id'],
+            date: content['date'],
             title: content['title'],
             video: content['video'],
             audio: content['audio'],

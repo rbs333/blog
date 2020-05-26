@@ -1,7 +1,7 @@
 export class Content {
-    id?: string;
+    text: string;
     title: string;
+    date?: string;
     audio?: string;
     video?: string;
-    text?: string;
 }
