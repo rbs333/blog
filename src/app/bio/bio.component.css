@@ -1,31 +1,28 @@
 .bio {
-    border: 1px solid black;
-    display: grid;
-    grid-template-columns: auto 1fr;
-    grid-template-rows: auto auto;
-    grid-template-areas: "pic links" "text text";
-    padding-bottom: 1rem;
+    display: flex;
 }
 
 .bioText {
     padding: 0 1rem;
-    margin-top: 1rem;
+    margin: 1rem 0;
     grid-area: text;
 }
 
 .bioPic {
-    grid-area: pic;
-    width: 100px;
-    height: 105px;
+    width: 125px;
+    height: 132px;
     border-radius: 20px;
     margin: 1rem;
 }
 
 .links {
     display: flex;
-    flex-direction: column;
     justify-content: space-evenly;
-    grid-area: links;
+}
+
+.links img {
+    width: 32px;
+    height: 32px;
 }
 
 .links a {
