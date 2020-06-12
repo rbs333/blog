@@ -1,11 +1,6 @@
-.bio {
+.heading {
     display: flex;
-}
-
-.bioText {
-    padding: 0 1rem;
-    margin: 1rem 0;
-    grid-area: text;
+    align-items: center;
 }
 
 .bioPic {
@@ -16,8 +11,7 @@
 }
 
 .links {
-    display: flex;
-    justify-content: space-evenly;
+    margin-left: 1rem;
 }
 
 .links img {
@@ -29,3 +23,16 @@
     color: black;
     padding: 5px;
 }
+
+.headingText {
+    font-size: 1.75rem;
+    margin: 1rem 1rem 1rem 0;
+    max-width: 12rem;
+}
+
+.bioText {
+    padding: 0 1rem;
+    margin: 1rem 0;
+    grid-area: bioText;
+}
+
