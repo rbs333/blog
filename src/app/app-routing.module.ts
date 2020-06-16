@@ -5,9 +5,7 @@ import { BioComponent } from './bio/bio.component';
 
 
 const routes: Routes = [
-    { path: 'home', 
-      component: ContentListComponent,
-    },
+    { path: 'home', component: ContentListComponent,},
     { path: 'bio', component: BioComponent },
     { path: '', redirectTo: '/home', pathMatch: 'full' }
 ];
