@@ -8,6 +8,7 @@ import { ContentComponent } from './content/content.component';
 import { SafePipe } from './safe.pipe';
 import { BioComponent } from './bio/bio.component';
 import { ContentListComponent } from './content-list/content-list.component';
+import { ArchiveComponent } from './archive/archive.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { ContentListComponent } from './content-list/content-list.component';
     ContentComponent,
     BioComponent,
     ContentListComponent,
+    ArchiveComponent,
   ],
   imports: [
     BrowserModule,

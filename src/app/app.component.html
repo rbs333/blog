@@ -1,14 +1,29 @@
-<div class="gutters">
+<div>
     <div class="header stdPad">
         <div class="titlebox">
             <span class="title">Virginia Boy Inc.</span>
-            <span class="subtitle">Songs etc. by Robert Shelton</span>
         </div>
         <nav class="btns">
             <a routerLink="/home" routerLinkActive="active">[home]</a>
-            <a routerLink="/bio" routerLinkActive="active">[bio]</a>
+            <a routerLink="/archive" routerLinkActive="active">[archive]</a>
+            <!-- <a routerLink="/connect" routerLinkActive="active">[connect]</a> -->
         </nav>
     </div>
     
-    <router-outlet></router-outlet>
+    <div class="gutters">
+        <h1>
+            Songs and stuff written by Robert Shelton. Thanks for stopping by! Please <a>say hi</a>
+        </h1>
+        <div class="divider">
+            <span class="box"></span>
+        </div>
+        <router-outlet></router-outlet>
+    </div>
+    
+    <div class="footer">
+        <div class="contact">
+            - contact - <br>
+            virginiaboymusic@gmail.com | @rockbobsterstuff
+        </div>
+    </div>
 </div>

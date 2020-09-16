@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { ContentService } from '../services/content-service.service';
 
 @Component({
-  selector: 'app-content-list',
-  templateUrl: './content-list.component.html',
-  styleUrls: ['./content-list.component.css']
+  selector: 'app-archive',
+  templateUrl: './archive.component.html',
+  styleUrls: ['./archive.component.css']
 })
-export class ContentListComponent implements OnInit {
+export class ArchiveComponent implements OnInit {
 
   public contentList; 
 

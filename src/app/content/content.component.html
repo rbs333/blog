@@ -1,26 +1,28 @@
 <div class="wrapper">
-    <div class="contentBox">
-        <div class="heading">
-            <span class="titleBox">
-                <h2>{{content.title}}</h2>
-                <span>{{content.date}}</span>
-            </span>
-            <audio 
-                *ngIf="content.audio"
-                class="content" controls 
-                [src]="content.audio | safe"
-                type="audio/mpeg"
-            >
-            </audio>
-        </div>
-        <div class="content">
-            <div class="text" [innerHTML]="content.text"></div>
-            <iframe 
-                *ngIf="content.video"
-                class="video"
-                [src]="content.video | safe"
-            >
-            </iframe>
-        </div>
+    <div class="divider">
+        <span>{{content.date}}</span>
+        <!-- <span class="box"></span> -->
+    </div>
+    <div class="heading">
+        
+        <span class="titleBox">
+            <h2>{{content.title}}</h2>
+        </span>
+        <audio 
+            *ngIf="content.audio"
+            class="content" controls 
+            [src]="content.audio | safe"
+            type="audio/mpeg"
+        >
+        </audio>
+    </div>
+    <div class="content">
+        <div class="text" [innerHTML]="content.text"></div>
+        <iframe 
+            *ngIf="content.video"
+            class="video"
+            [src]="content.video | safe"
+        >
+        </iframe>
     </div>
 </div>
