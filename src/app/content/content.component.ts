@@ -14,4 +14,13 @@ export class ContentComponent implements OnInit {
 
   @Input() content: any;
 
+  toggleShow = (id) => {
+    var element = document.getElementById(id);
+    var height = parseInt(window.getComputedStyle(element).getPropertyValue('height').split("p")[0]);
+    if (height/window.innerHeight < .605) {
+      element.style.height = "auto";
+    } else {
+      element.style.height = "60vh";
+    }
+  }
 }

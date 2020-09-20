@@ -12,12 +12,11 @@ html, body {
 }
 
 .gutters {
-    margin: 0 15vw;
+    margin: 0 20vw;
 }
 
 .divider {
     display: flex;
-    justify-content: center;
     margin: 2rem 0 1rem 0;
 }
 
