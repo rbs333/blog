@@ -2,33 +2,41 @@
 html, body {
     margin: 0;
     padding: 0;
-    font-family: 'Cousine', monospace;
+    font-family: 'Montserrat', sans-serif;
     font-size: 16px;
-    line-height: 1.5;
-}
-
-html {
-    background-image: url("./assets/cover.JPG");
+    line-height: 1.7;
 }
 
 .stdPad {
     padding: 10px;
 }
 
-.contentBox {
-    border: 2px solid black;
-    border-radius: 1rem;
-    margin-bottom: 1rem;
-    background-color: #f5f5f5e6;
-    box-shadow: 3px 3px 3px;
+.gutters {
+    margin: 0 25vw;
 }
 
-.gutters {
-    margin: 0 10vw;
+.titleBox {
+    font-family: 'Merriweather', serif;
+}
+
+h2 {
+    font-family: 'Merriweather', serif;
+}
+
+.divider {
+    display: flex;
+    margin: 2rem 0 1rem 0;
+}
+
+.divider .box {
+    background-color: black;
+    width: 7rem;
+    height: .5rem;
+    margin: 1rem 0;
 }
 
 @media (max-width: 800px) {
     .gutters {
-        margin: 0 5vw;
+        margin: 0 8vw;
     }
 }
