@@ -30,4 +30,9 @@ export class ContentService {
         return contentMap;
       }));
   }
+
+  getOne(key) {
+    // need to setup a getByKey method on lambda
+    return this.http.get(API_URL)
+  }
 }

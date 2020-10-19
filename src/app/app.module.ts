@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ContentComponent } from './content/content.component';
 import { SafePipe } from './safe.pipe';
-import { BioComponent } from './bio/bio.component';
 import { ContentListComponent } from './content-list/content-list.component';
 import { ArchiveComponent } from './archive/archive.component';
 
@@ -15,7 +14,6 @@ import { ArchiveComponent } from './archive/archive.component';
     AppComponent,
     SafePipe,
     ContentComponent,
-    BioComponent,
     ContentListComponent,
     ArchiveComponent,
   ],
