@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 
 import { Content } from '../model/content';
 import { map } from 'rxjs/operators';
@@ -24,7 +24,8 @@ export class ContentService {
             title: content['title'],
             video: content['video'],
             audio: content['audio'],
-            text: content['text']
+            text: content['text'],
+            isExpandable: true ? content['text'].length > 700 : false
           });
         });
         return contentMap;

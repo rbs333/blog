@@ -4,4 +4,5 @@ export class Content {
     date?: string;
     audio?: string;
     video?: string;
+    isExpandable?: boolean
 }

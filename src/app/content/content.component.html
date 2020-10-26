@@ -12,7 +12,13 @@
         </span>
     </div>
     <div [id]="content.title" class="text" [innerHTML]="content.text"></div>
-    <div class="btn" (click)="toggleShow(content.title)">show</div>
+    <div 
+        class="btn" 
+        (click)="toggleShow(content.title)"
+        *ngIf="content.isExpandable"
+    >
+        show
+    </div>
     <div class="divider">
         <div class="box"></div>
     </div>
