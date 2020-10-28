@@ -9,6 +9,7 @@ import { SafePipe } from './safe.pipe';
 import { BioComponent } from './bio/bio.component';
 import { ContentListComponent } from './content-list/content-list.component';
 import { ArchiveComponent } from './archive/archive.component';
+import { ManifestoComponent } from './manifesto/manifesto.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { ArchiveComponent } from './archive/archive.component';
     BioComponent,
     ContentListComponent,
     ArchiveComponent,
+    ManifestoComponent,
   ],
   imports: [
     BrowserModule,
