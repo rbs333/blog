@@ -2,8 +2,11 @@
     max-width: 100%;
     overflow-x: hidden;
     overflow-y: hidden;
-    height: 60vh;
     flex-grow: 1;
+}
+
+.expandable {
+    max-height: 60vh;
 }
 
 .audioPlayer {
@@ -23,16 +26,4 @@
     text-decoration: underline;
     color: tan;
 }
-
-@media (max-width: 800px) {
-    .content {
-        flex-direction: column;
-        height: 60vh;
-    }
-
-    .content .video {
-        margin: 1rem 0;
-        width: 100%;
-    }
-} 
 
