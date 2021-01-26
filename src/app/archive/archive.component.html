@@ -1,4 +1,12 @@
 <div>
   <h1>Archive</h1>
-  <a routerLink="/archive/:title" *ngFor="let c of contentList">{{c.title}}<br></a>
+  <a 
+    routerLink="/archive/:title" 
+    *ngFor="let c of contentList"
+    value="c.title"
+    (click)="navigateToPage(c.title)"
+  >
+    {{c.title}}
+    <br>
+  </a>
 </div>

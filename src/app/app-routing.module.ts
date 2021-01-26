@@ -10,10 +10,8 @@ import { ArchiveItemComponent } from './archive-item/archive-item.component';
 const routes: Routes = [
     { path: '', component: ContentListComponent},
     { path: 'manifesto', component: ManifestoComponent },
-    // { path: 'archive', component: ArchiveComponent, children: [
-    //   { path: ':title', component: ContentComponent }
-    // ]},
-    { path: "archive/:id", component: ArchiveItemComponent}
+    { path: 'archive', component: ArchiveComponent},
+    { path: "archive/:title", component: ArchiveItemComponent}
 ];
 
 @NgModule({

@@ -40,6 +40,6 @@ export class ContentService {
       })
     }
 
-    return this.http.post<Content>(API_URL + "/getContentbyKey", {"title": title}, httpOptions);
+    return this.http.post(API_URL + "/getContentbyKey", {"title": title}, httpOptions);
   }
 }

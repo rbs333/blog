@@ -1,5 +1,4 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ActivatedRoute } from '@angular/router'
 
 @Component({
   selector: 'app-content',
@@ -8,9 +7,7 @@ import { ActivatedRoute } from '@angular/router'
 })
 export class ContentComponent implements OnInit {
 
-  constructor(private route: ActivatedRoute) { 
-    this.route.params.subscribe( params => console.log(params));
-  }
+  constructor() {}
 
   ngOnInit() {
   }
