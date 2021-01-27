@@ -1,7 +1,7 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ContentService } from '../services/content-service.service';
 import { Content } from '../model/content';
-import { Routes, RouterModule, Router, ActivatedRoute } from "@angular/router";
+import { ActivatedRoute } from "@angular/router";
 
 @Component({
   selector: 'app-archive-item',
@@ -9,15 +9,16 @@ import { Routes, RouterModule, Router, ActivatedRoute } from "@angular/router";
   styleUrls: ['./archive-item.component.css']
 })
 export class ArchiveItemComponent implements OnInit {
-  // @Input() title: String;
-  title = "Breakfast"
+  title = ""
   public content: Content; 
 
   constructor(
     private contentService: ContentService,
     private route: ActivatedRoute
   ) {
-    this.route.params.subscribe( params => {this.title = params["title"]})
+    this.route.params.subscribe( params => {
+      this.title = params["title"]
+    })
   }
 
   ngOnInit() {
@@ -25,14 +26,13 @@ export class ArchiveItemComponent implements OnInit {
   }
 
   private getContentByTitle() {
-    this.contentService.getContentByTitle(this.title).subscribe(
-      (data: any) => { 
-        this.content = data.Item;
-      },
-      err => console.error(err),
-      () => console.log("content loaded.")
-  );
-}
-
-//  todo figure out how title gets passed to component. 
+    this.contentService.getContentByTitle(this.title)
+      .subscribe(
+        (data: any) => { 
+          this.content = data.Item;
+        },
+        err => console.error(err),
+        () => {}
+    );
+  }
 }

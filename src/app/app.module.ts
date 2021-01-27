@@ -10,6 +10,7 @@ import { ContentListComponent } from './content-list/content-list.component';
 import { ArchiveComponent } from './archive/archive.component';
 import { ManifestoComponent } from './manifesto/manifesto.component';
 import { ArchiveItemComponent } from './archive-item/archive-item.component';
+import { StoreComponent } from './store/store.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { ArchiveItemComponent } from './archive-item/archive-item.component';
     ArchiveComponent,
     ManifestoComponent,
     ArchiveItemComponent,
+    StoreComponent,
   ],
   imports: [
     BrowserModule,
