@@ -11,6 +11,7 @@ import { ArchiveComponent } from './archive/archive.component';
 import { ManifestoComponent } from './manifesto/manifesto.component';
 import { ArchiveItemComponent } from './archive-item/archive-item.component';
 import { StoreComponent } from './store/store.component';
+import { ShopComponent } from './shop/shop.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { StoreComponent } from './store/store.component';
     ManifestoComponent,
     ArchiveItemComponent,
     StoreComponent,
+    ShopComponent
   ],
   imports: [
     BrowserModule,
