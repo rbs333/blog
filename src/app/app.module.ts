@@ -10,8 +10,10 @@ import { ContentListComponent } from './content-list/content-list.component';
 import { ArchiveComponent } from './archive/archive.component';
 import { ManifestoComponent } from './manifesto/manifesto.component';
 import { ArchiveItemComponent } from './archive-item/archive-item.component';
-import { StoreComponent } from './store/store.component';
+import { CheckoutComponent } from './checkout/checkout.component';
 import { ShopComponent } from './shop/shop.component';
+import { ProductFormComponent } from './product-form/product-form.component';
+import { CheckoutElementComponent } from './checkout-element/checkout-element.component';
 
 @NgModule({
   declarations: [
@@ -22,8 +24,10 @@ import { ShopComponent } from './shop/shop.component';
     ArchiveComponent,
     ManifestoComponent,
     ArchiveItemComponent,
-    StoreComponent,
-    ShopComponent
+    CheckoutComponent,
+    ShopComponent,
+    ProductFormComponent,
+    CheckoutElementComponent
   ],
   imports: [
     BrowserModule,

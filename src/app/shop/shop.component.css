@@ -1,0 +1,8 @@
+.productWrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.productWrapper div {
+  width: 45%;
+}

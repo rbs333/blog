@@ -5,11 +5,11 @@ import { StripeService } from '../services/stripe.service';
 declare var StripeCheckout;
 
 @Component({
-  selector: 'app-store',
-  templateUrl: './store.component.html',
-  styleUrls: ['./store.component.css']
+  selector: 'app-checkout',
+  templateUrl: './checkout.component.html',
+  styleUrls: ['./checkout.component.css']
 })
-export class StoreComponent implements OnInit {
+export class CheckoutComponent implements OnInit {
   @Input() amount;
   @Input() description;
 
@@ -20,9 +20,9 @@ export class StoreComponent implements OnInit {
   constructor(private stripeService: StripeService) { }
 
   ngOnInit() {
-    this.handler = StripeCheckout.configure({
-      // todo: figure out secure way of storing this. 
-      key: '',
+    this.handler = StripeCheckout.configure({ 
+      // https://stripe.com/docs/keys - secret keys hidden, publishable keys available for JS
+      key: 'pk_test_mb4DV828Q51bpQcaR2r5e2VM00WCqphIst',
       locale: 'auto',
       source: async (source) => {
         console.log(source)

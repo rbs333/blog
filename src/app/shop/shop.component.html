@@ -1,4 +1,10 @@
 <h2>Capitalism!</h2>
-<p>Coming maybe...</p>
-
-<app-store [amount]="100" [description]="hug"></app-store>
+<div class="productWrapper">
+  <div *ngFor="let p of products">
+    <h2>{{p.name}}</h2>
+    <p>{{p.description}}</p>
+    <button class="buyBtn">${{p.amount / 100}} Purchase</button>
+  </div>
+</div>
+<br><br>
+<app-checkout-element [amount]="2000" [description]="nothing"></app-checkout-element>

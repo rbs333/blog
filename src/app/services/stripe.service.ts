@@ -18,8 +18,6 @@ export class StripeService {
       })
     }
 
-    console.log("in service", body)
-
     return this.http.post(LAMBDA_URL + "charge", body, httpOptions)
   }
 }
