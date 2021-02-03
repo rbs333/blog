@@ -1,5 +1,73 @@
-<form (submit)="handleForm($event)">
+<form (submit)="handleForm($event, formGroup.value)" class="form">
+  <h1>Product Name</h1>
+  <p>Price: ${{amount/100}}</p>
+  <h2>Shipping Information</h2>
+  <h3>Can only ship to the US! Email me and we'll work something out if in a different country.</h3>
+  <div [formGroup]="formGroup" class="inputDiv">
+    <label for="name">name</label>
+    <input 
+      type="text"
+      id="name"
+      placeholder="Bobby Shelto"
+      formControlName="name"
+    >
+  </div>
+
+  <div [formGroup]="formGroup" class="inputDiv">
+    <label for="name">email</label>
+    <input 
+      type="text"
+      id="email"
+      placeholder="virginiaboymusic@gmail.com"
+      formControlName="email"
+    >
+  </div>
+
+  <div [formGroup]="formGroup" class="inputDiv">
+    <label for="name">address</label>
+    <input 
+      type="text"
+      id="name"
+      placeholder="185 Berry Street Suite 550"
+      formControlName="address"
+    >
+  </div>
+
+  <div [formGroup]="formGroup" class="inputDiv">
+    <label for="name">city</label>
+    <input 
+      type="text"
+      id="city"
+      placeholder="San Francisco"
+      formControlName="city"
+    >
+  </div>
+
+  <div [formGroup]="formGroup" class="inputDiv">
+    <label for="name">state</label>
+    <input 
+      type="text"
+      id="state"
+      placeholder="CA"
+      formControlName="state"
+    >
+  </div>
+
+  <div [formGroup]="formGroup" class="inputDiv">
+    <label for="name">zip</label>
+    <input 
+      type="text"
+      id="zip"
+      placeholder="94107"
+      formControlName="zip"
+    >
+  </div>
+
+  <h2>Card Information</h2>
   <div #cardElement></div>
   <p>{{cardErrors}}</p>
-  <button>Buy for ${{amount/100}}.00</button>
+  <br>
+  <button type="submit">Submit!</button>
+  <button>Cancel</button>
+  <p>{{confirmation}}</p>
 </form>

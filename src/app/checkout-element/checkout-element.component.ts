@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, ViewChild, ElementRef } from '@angular/core';
 import { StripeService } from '../services/stripe.service';
+import { FormBuilder } from '@angular/forms';
 
 declare var Stripe;
 
@@ -11,17 +12,32 @@ declare var Stripe;
 
 export class CheckoutElementComponent implements OnInit {
 
-  constructor(private stripeService: StripeService) { }
-  @Input() amount: number;
-  @Input() description: string;
-  @ViewChild('cardElement', {static: true}) cardElement: ElementRef;
-
+  formGroup; 
   stripe;
   card;
   cardErrors;
 
   loading = false;
   confirmation;
+
+  constructor(
+    private stripeService: StripeService,
+    private formBuilder: FormBuilder
+  ) { 
+    this.formGroup = this.formBuilder.group({
+      name: "",
+      address: "",
+      city: "",
+      state: "",
+      zip: "",
+      email: ""
+    })
+  }
+
+  @Input() amount: number;
+  @Input() description: string;
+  @ViewChild('cardElement', {static: true}) cardElement: ElementRef;
+
 
   ngOnInit() {
     this.stripe = Stripe('pk_test_mb4DV828Q51bpQcaR2r5e2VM00WCqphIst');
@@ -35,7 +51,7 @@ export class CheckoutElementComponent implements OnInit {
     })
   }
 
-  async handleForm(e) {
+  async handleForm(e, formData) {
     e.preventDefault();
 
     const { source, error } = await this.stripe.createSource(this.card);
@@ -44,7 +60,7 @@ export class CheckoutElementComponent implements OnInit {
       this.cardErrors = error.message;
     }  else {
       this.loading = true;
-
+      console.log("form", formData)
       this.stripeService.createCharge(
         {
           amount: this.amount, 
