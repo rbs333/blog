@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, HostListener } from '@angular/core';
+import { StripeService } from '../services/stripe.service';
 
 // import types if desire to strong type
 declare var StripeCheckout;
@@ -16,23 +17,27 @@ export class StoreComponent implements OnInit {
   confirmation: any;
   loading = false;
 
-  constructor() { }
+  constructor(private stripeService: StripeService) { }
 
   ngOnInit() {
     this.handler = StripeCheckout.configure({
       // todo: figure out secure way of storing this. 
       key: '',
-      image: 'some-image',
       locale: 'auto',
       source: async (source) => {
+        console.log(source)
         this.loading = true;
-        // call lambda here
-        const lambda_fun = async (params) => {
-          //do lambda things charge the card
-          console.log("in the mock lambda", params.amount)
-        };
 
-        this.confirmation = await lambda_fun({amount: this.amount, source: source.id});
+        this.stripeService.createCharge(
+          {
+            amount: this.amount, 
+            currency: 'USD',
+            stripeToken: source.id
+          }
+        ).subscribe((res) => {
+          this.confirmation = res;
+        });
+
         this.loading = false;
       }
     })
