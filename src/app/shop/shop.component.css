@@ -6,3 +6,15 @@
 .productWrapper div {
   width: 45%;
 }
+
+.productWrapper img {
+  max-width: 100%;
+}
+
+.productWrapper button {
+  float: right;
+}
+
+.productWrapper p {
+  height: 5rem;
+}

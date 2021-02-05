@@ -1,4 +1,24 @@
 <div>
+    <ng-template #template>
+        <div class="modal-header">
+
+            <!-- Modal Title -->
+            <h4 class="modal-title pull-left">Modal</h4>
+
+            <!-- Close Button -->
+            <button type="button" 
+                    class="close pull-right" 
+                    (click)="modalRef.hide()">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+
+        <!-- Modal Body -->
+        <div class="modal-body">
+            This is a modal.
+        </div>
+    </ng-template>
+
     <div class="header stdPad">
         <div class="titlebox">
             <span class="title">Virginia Boy Inc.</span>
@@ -9,6 +29,7 @@
             <a routerLink="/archive" routerLinkActive="active">[ archive ]</a>
             <a routerLink="/shop" routerLinkActive="active">[ shop ]</a>
         </nav>
+        <button class="btn btn-primary" (click)="openModal(template)">Open Modal</button>
     </div>
     
     <div class="gutters">

@@ -36,6 +36,9 @@ export class CheckoutElementComponent implements OnInit {
 
   @Input() amount: number;
   @Input() description: string;
+  @Input() image: string;
+  @Input() productName: string;
+  
   @ViewChild('cardElement', {static: true}) cardElement: ElementRef;
 
 

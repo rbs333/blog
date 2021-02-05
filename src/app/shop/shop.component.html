@@ -2,8 +2,9 @@
 <div class="productWrapper">
   <div *ngFor="let p of products">
     <h2>{{p.name}}</h2>
-    <p>{{p.description}}</p>
-    <button class="buyBtn">${{p.amount / 100}} Purchase</button>
+    <img src="{{p.image}}"/>
+    <p>${{p.amount/100}} - {{p.description}}</p>
+    <button class="buyBtn">Purchase</button>
   </div>
 </div>
 <br><br>
