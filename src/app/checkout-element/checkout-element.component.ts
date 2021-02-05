@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, ViewChild, ElementRef } from '@angular/core';
 import { StripeService } from '../services/stripe.service';
 import { FormBuilder } from '@angular/forms';
+import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
 declare var Stripe;
 
@@ -22,7 +23,8 @@ export class CheckoutElementComponent implements OnInit {
 
   constructor(
     private stripeService: StripeService,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    public activeComponent: NgbActiveModal
   ) { 
     this.formGroup = this.formBuilder.group({
       name: "",
@@ -30,15 +32,13 @@ export class CheckoutElementComponent implements OnInit {
       city: "",
       state: "",
       zip: "",
-      email: ""
+      email: "",
+      shirt_size: ""
     })
   }
 
-  @Input() amount: number;
-  @Input() description: string;
-  @Input() image: string;
-  @Input() productName: string;
-  
+  @Input() product: any;
+
   @ViewChild('cardElement', {static: true}) cardElement: ElementRef;
 
 
@@ -66,7 +66,7 @@ export class CheckoutElementComponent implements OnInit {
       console.log("form", formData)
       this.stripeService.createCharge(
         {
-          amount: this.amount, 
+          amount: this.product.amount, 
           currency: 'USD',
           stripeToken: source.id
         }
@@ -75,6 +75,8 @@ export class CheckoutElementComponent implements OnInit {
       });
 
       this.loading = false;
+      this.activeComponent.dismiss()
+      alert("Thank you! Payment Received.")
     }
   }
 }

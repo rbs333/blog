@@ -1,8 +1,29 @@
+<button type="button" class="close" aria-label="Close" (click)="activeComponent.dismiss('Cross click')">
+  <span aria-hidden="true">&times;</span>
+</button>
 <form (submit)="handleForm($event, formGroup.value)" class="form">
-  <h1>Product Name</h1>
-  <p>Price: ${{amount/100}}</p>
+  <div class="formHeader">
+    <h1>{{product.name}}</h1>
+    <img src="{{product.image}}">
+  </div>
+  
+  <p>Price: ${{product.amount/100}}</p>
+
+  <div *ngIf="product.isShirt" [formGroup]="formGroup" class="inputDiv">
+    <label for="shirt_size">Shirt Size:</label>
+    <select id="shirt_size" name="shirt_sizes">
+      <option value="S">S</option>
+      <option value="M">M</option>
+      <option value="L">L</option>
+      <option value="XL">XL</option>
+    </select>
+  </div>
+  <br>
+
   <h2>Shipping Information</h2>
-  <h3>Can only ship to the US! Email me and we'll work something out if in a different country.</h3>
+  <div>Can only ship to the US! Email me and we'll work something out if in a different country.</div>
+  <br>
+
   <div [formGroup]="formGroup" class="inputDiv">
     <label for="name">name</label>
     <input 
@@ -62,12 +83,11 @@
       formControlName="zip"
     >
   </div>
-
+  <br>
   <h2>Card Information</h2>
   <div #cardElement></div>
   <p>{{cardErrors}}</p>
   <br>
-  <button type="submit">Submit!</button>
-  <button>Cancel</button>
+  <button class="submitBtn" type="submit">Submit!</button>
   <p>{{confirmation}}</p>
 </form>

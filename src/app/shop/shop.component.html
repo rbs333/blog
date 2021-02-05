@@ -1,11 +1,31 @@
 <h2>Capitalism!</h2>
+<ng-template #template>
+  <div class="modal-header">
+
+      <!-- Modal Title -->
+      <h4 class="modal-title pull-left">Modal</h4>
+
+      <!-- Close Button -->
+      <button type="button" 
+              class="close pull-right" 
+              (click)="modalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+      </button>
+  </div>
+
+  <!-- Modal Body -->
+  <div class="modal-body">
+      This is a modal.
+  </div>
+</ng-template>
 <div class="productWrapper">
   <div *ngFor="let p of products">
     <h2>{{p.name}}</h2>
     <img src="{{p.image}}"/>
     <p>${{p.amount/100}} - {{p.description}}</p>
-    <button class="buyBtn">Purchase</button>
+    <button class="buyBtn" (click)="openModal(p)">Purchase</button>
+    <!-- <button class="buyBtn">Purchase</button> -->
   </div>
 </div>
 <br><br>
-<app-checkout-element [amount]="2000" [description]="nothing"></app-checkout-element>
+<!-- <app-checkout-element [amount]="2000" [description]="nothing"></app-checkout-element> -->
