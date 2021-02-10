@@ -13,6 +13,10 @@
     width: 100%;
 }
 
+.heading {
+    padding-bottom: 1rem;
+}
+
 .btn {
     border-radius: 2px;
     padding: .25rem;
