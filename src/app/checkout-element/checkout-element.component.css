@@ -5,6 +5,7 @@
 .form .inputDiv {
   display: grid;
   grid-template-columns: 1fr 3fr;
+  padding: 0.25rem 0;
 }
 
 .formHeader {
@@ -20,4 +21,8 @@
 .submitBtn {
   float: right;
   margin-bottom: 1rem;
+}
+
+.textAlert {
+  color: red;
 }

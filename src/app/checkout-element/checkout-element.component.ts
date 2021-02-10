@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, ViewChild, ElementRef } from '@angular/core';
 import { StripeService } from '../services/stripe.service';
-import { FormBuilder } from '@angular/forms';
+import { Validators, FormGroup, FormControl } from '@angular/forms';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
 declare var Stripe;
@@ -23,17 +23,18 @@ export class CheckoutElementComponent implements OnInit {
 
   constructor(
     private stripeService: StripeService,
-    private formBuilder: FormBuilder,
     public activeComponent: NgbActiveModal
   ) { 
-    this.formGroup = this.formBuilder.group({
-      name: "",
-      address: "",
-      city: "",
-      state: "",
-      zip: "",
-      email: "",
-      shirt_size: ""
+    this.formGroup = new FormGroup({
+      name: new FormControl("", Validators.required),
+      email: new FormControl("", Validators.required),
+      address: new FormControl("", Validators.required),
+      city: new FormControl("", Validators.required),
+      state: new FormControl("", [Validators.required, 
+                                  Validators.maxLength(2)]),
+      zip: new FormControl("", [Validators.required,
+                                Validators.minLength(5)]),
+      shirt_size: new FormControl("", Validators.minLength(1)),
     })
   }
 
@@ -54,6 +55,15 @@ export class CheckoutElementComponent implements OnInit {
     })
   }
 
+  get name() { return this.formGroup.get('name'); }
+  get email() { return this.formGroup.get('email'); }
+  get address() { return this.formGroup.get('address'); }
+  get city() { return this.formGroup.get('city'); }
+  get state() { return this.formGroup.get('state'); }
+  get zip() { return this.formGroup.get('zip'); }
+  get shirt_size() { return this.formGroup.get('shirt_size'); }
+
+
   async handleForm(e, formData) {
     e.preventDefault();
 
@@ -63,7 +73,6 @@ export class CheckoutElementComponent implements OnInit {
       this.cardErrors = error.message;
     }  else {
       this.loading = true;
-      console.log("form", formData)
       this.stripeService.createCharge(
         {
           amount: this.product.amount, 

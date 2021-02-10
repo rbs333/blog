@@ -1,7 +1,11 @@
 <button type="button" class="close" aria-label="Close" (click)="activeComponent.dismiss('Cross click')">
   <span aria-hidden="true">&times;</span>
 </button>
-<form (submit)="handleForm($event, formGroup.value)" class="form">
+<form 
+  (submit)="handleForm($event, formGroup.value)" 
+  class="form"
+  #formDir="ngForm"
+>
   <div class="formHeader">
     <h1>{{product.name}}</h1>
     <img src="{{product.image}}">
@@ -12,11 +16,18 @@
   <div *ngIf="product.isShirt" [formGroup]="formGroup" class="inputDiv">
     <label for="shirt_size">Shirt Size:</label>
     <select id="shirt_size" name="shirt_sizes">
+      <option value="">None Selected</option>
       <option value="S">S</option>
       <option value="M">M</option>
       <option value="L">L</option>
       <option value="XL">XL</option>
     </select>
+
+    <div 
+      *ngIf="shirt_size.invalid && (shirt_size.dirty || shirt_size.touched)"
+    >
+      <div *ngIf="shirt_size.errors.required" class="textAlert">*required</div>
+    </div>
   </div>
   <br>
 
@@ -31,58 +42,98 @@
       id="name"
       placeholder="Bobby Shelto"
       formControlName="name"
+      class="form-control"
+      required
     >
+    <div 
+      *ngIf="name.invalid && (name.dirty || name.touched)"
+    >
+      <div *ngIf="name.errors.required" class="textAlert">*required</div>
+    </div>
   </div>
 
+  
+
   <div [formGroup]="formGroup" class="inputDiv">
-    <label for="name">email</label>
+    <label for="email">email</label>
     <input 
       type="text"
       id="email"
       placeholder="virginiaboymusic@gmail.com"
       formControlName="email"
+      class="form-control"
     >
+    <div 
+      *ngIf="email.invalid && (email.dirty || email.touched)"
+    >
+      <div *ngIf="email.errors.required" class="textAlert">*required</div>
+    </div>
   </div>
 
   <div [formGroup]="formGroup" class="inputDiv">
-    <label for="name">address</label>
+    <label for="address">address</label>
     <input 
       type="text"
-      id="name"
+      id="address"
       placeholder="185 Berry Street Suite 550"
       formControlName="address"
+      class="form-control"
     >
+    <div 
+      *ngIf="address.invalid && (address.dirty || address.touched)"
+    >
+      <div *ngIf="address.errors.required" class="textAlert">*required</div>
+    </div>
   </div>
 
   <div [formGroup]="formGroup" class="inputDiv">
-    <label for="name">city</label>
+    <label for="city">city</label>
     <input 
       type="text"
       id="city"
       placeholder="San Francisco"
       formControlName="city"
+      class="form-control"
     >
+    <div 
+      *ngIf="city.invalid && (city.dirty || city.touched)"
+    >
+      <div *ngIf="city.errors.required" class="textAlert">*required</div>
+    </div>
   </div>
 
   <div [formGroup]="formGroup" class="inputDiv">
-    <label for="name">state</label>
+    <label for="state">state</label>
     <input 
       type="text"
       id="state"
       placeholder="CA"
       formControlName="state"
+      class="form-control"
     >
+    <div 
+      *ngIf="state.invalid && (state.dirty || state.touched)"
+    >
+      <div *ngIf="state.errors.required" class="textAlert">*required</div>
+    </div>
   </div>
 
   <div [formGroup]="formGroup" class="inputDiv">
-    <label for="name">zip</label>
+    <label for="zip">zip</label>
     <input 
       type="text"
       id="zip"
       placeholder="94107"
       formControlName="zip"
+      class="form-control"
     >
+    <div 
+      *ngIf="zip.invalid && (zip.dirty || zip.touched)"
+    >
+      <div *ngIf="zip.errors.required" class="textAlert">*required</div>
+    </div>
   </div>
+
   <br>
   <h2>Card Information</h2>
   <div #cardElement></div>
