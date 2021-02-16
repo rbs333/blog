@@ -81,11 +81,18 @@ export class CheckoutElementComponent implements OnInit {
         }
       ).subscribe((res) => {
         this.confirmation = res;
-      });
-
-      this.loading = false;
-      this.activeComponent.dismiss()
-      alert("Thank you! Payment Received.")
+        formData.amount = this.product.amount;
+        formData.date = Date();
+        formData.id = formData.email
+        console.log(formData)
+        this.stripeService.postAddressInfo(formData)
+          .subscribe(
+            (res) => {
+              this.loading = false;
+              this.activeComponent.dismiss()
+              alert("Thank you! Payment Received.")
+          })
+      })
     }
   }
 }

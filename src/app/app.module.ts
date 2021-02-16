@@ -16,6 +16,7 @@ import { CheckoutComponent } from './checkout/checkout.component';
 import { ShopComponent } from './shop/shop.component';
 import { ProductFormComponent } from './product-form/product-form.component';
 import { CheckoutElementComponent } from './checkout-element/checkout-element.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { CheckoutElementComponent } from './checkout-element/checkout-element.co
     CheckoutComponent,
     ShopComponent,
     ProductFormComponent,
-    CheckoutElementComponent
+    CheckoutElementComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
