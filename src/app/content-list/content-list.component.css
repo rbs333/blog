@@ -1,0 +1,11 @@
+h2 {
+  padding-top: 2rem;
+}
+
+div a {
+  font-size: 1.15rem;
+}
+
+div a:hover {
+  color: tan;
+}

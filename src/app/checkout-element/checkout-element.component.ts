@@ -79,19 +79,19 @@ export class CheckoutElementComponent implements OnInit {
           currency: 'USD',
           stripeToken: source.id
         }
-      ).subscribe((res) => {
-        this.confirmation = res;
+      ).subscribe(() => {
         formData.amount = this.product.amount;
         formData.date = Date();
-        formData.id = formData.email
-        console.log(formData)
+        formData.id = formData.email;
+
         this.stripeService.postAddressInfo(formData)
           .subscribe(
             (res) => {
+              this.confirmation = res;
               this.loading = false;
               this.activeComponent.dismiss()
               alert("Thank you! Payment Received.")
-          })
+          });
       })
     }
   }

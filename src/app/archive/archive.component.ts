@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { ContentService } from '../services/content-service.service';
-import { Routes, RouterModule, Router, ActivatedRoute } from "@angular/router";
+import { Component, OnInit, Input } from '@angular/core';
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-archive',
@@ -9,26 +8,17 @@ import { Routes, RouterModule, Router, ActivatedRoute } from "@angular/router";
 })
 export class ArchiveComponent implements OnInit {
 
-  public contentList; 
+  @Input() contentList: any; 
 
   constructor(
-    private contentService: ContentService,
     private router: Router
   ) {}
 
   ngOnInit() {
-    this.loadContent();
   }
 
-  private loadContent() {
-    this.contentService.getContent().subscribe(
-      data => { this.contentList = data },
-      err => console.error(err),
-      () => console.log("content loaded.")
-    );
-  }
 
-  private navigateToPage(title: String) {
+  public navigateToPage(title: String) {
     this.router.navigate(['archive', title]);
   }
 

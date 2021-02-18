@@ -1,0 +1,26 @@
+.videoWrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.displayVideo { 
+  width: 100%;
+  height: 45vh;
+}
+
+.newsPanel {
+  padding: 2rem 0 0 0;
+}
+
+.moreBtn {
+  margin: 2rem 0;
+  font-size: 1.15rem;
+}
+
+.moreBtn a {
+  color: black;
+}
+
+.moreBtn a:hover {
+  color: tan;
+}

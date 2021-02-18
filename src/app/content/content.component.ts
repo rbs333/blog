@@ -12,6 +12,7 @@ export class ContentComponent implements OnInit {
   ngOnInit() {}
 
   @Input() content: any;
+  @Input() showDivider = true;
 
   toggleShow = (id) => {
     var element = document.getElementById(id);
