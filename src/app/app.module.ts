@@ -8,7 +8,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ContentComponent } from './content/content.component';
 import { SafePipe } from './safe.pipe';
-import { ContentListComponent } from './content-list/content-list.component';
+import { ListViewComponent } from './list-view/list-view.component';
 import { ArchiveComponent } from './archive/archive.component';
 import { ManifestoComponent } from './manifesto/manifesto.component';
 import { ArchiveItemComponent } from './archive-item/archive-item.component';
@@ -23,7 +23,7 @@ import { HomeComponent } from './home/home.component';
     AppComponent,
     SafePipe,
     ContentComponent,
-    ContentListComponent,
+    ListViewComponent,
     ArchiveComponent,
     ManifestoComponent,
     ArchiveItemComponent,

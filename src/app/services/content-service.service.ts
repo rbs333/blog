@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-
 import { Content } from '../model/content';
 import { map } from 'rxjs/operators';
+import * as config from '../../../config.json';
 
-const API_URL:string = 'https://aq9j0pujd0.execute-api.us-east-1.amazonaws.com/beta';
+const API_URL:string = config.api_url;
 
 @Injectable({
   providedIn: 'root'
@@ -39,7 +39,7 @@ export class ContentService {
         'Content-Type': 'application/json'
       })
     }
-
-    return this.http.post(API_URL + "/getContentbyKey", {"title": title}, httpOptions);
+    
+    return this.http.post(API_URL + "/getContentbyKey", {"title": title}, httpOptions)
   }
 }

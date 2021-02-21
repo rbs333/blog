@@ -12,15 +12,15 @@
   padding: 2rem 0 0 0;
 }
 
-.moreBtn {
+.pageLink {
   margin: 2rem 0;
   font-size: 1.15rem;
 }
 
-.moreBtn a {
+.pageLink a {
   color: black;
 }
 
-.moreBtn a:hover {
+.pageLink a:hover {
   color: tan;
 }

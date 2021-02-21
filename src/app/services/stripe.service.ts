@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import * as config from '../../../config.json';
 
-const STRIPE_LAMBDA_URL: string = 'https://2i3njz15if.execute-api.us-east-1.amazonaws.com/prod/';
-const LAMBDA_URL: string = 'https://aq9j0pujd0.execute-api.us-east-1.amazonaws.com/beta/';
+const STRIPE_LAMBDA_URL: string = config.charge_url;
+const LAMBDA_URL: string = config.api_url;
 
 @Injectable({
   providedIn: 'root'
@@ -19,7 +20,7 @@ export class StripeService {
       })
     }
 
-    return this.http.post(STRIPE_LAMBDA_URL + "charge", body, httpOptions)
+    return this.http.post(STRIPE_LAMBDA_URL + "/charge", body, httpOptions)
   }
 
   postAddressInfo(body: any) {
@@ -29,6 +30,6 @@ export class StripeService {
       })
     }
 
-    return this.http.post(LAMBDA_URL + "order", body, httpOptions)
+    return this.http.post(LAMBDA_URL + "/order", body, httpOptions)
   }
 }
