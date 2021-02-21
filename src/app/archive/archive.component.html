@@ -1,4 +1,38 @@
+
+<h2>
+  Archive
+</h2>
+
 <div>
-  <h1>Archive</h1>
-  <a routerLink="/archive/:title" *ngFor="let c of contentList">{{c.title}}<br></a>
+  <a 
+    (click)="toggleView()"
+    *ngIf="listView"
+  >
+    [ See Scroll View Instead ]
+  </a>
+  <a 
+    (click)="toggleView()"
+    *ngIf="!listView"
+  >
+    [ See List View Instead ]
+  </a>
+</div>
+
+<div class="divider">
+  <span class="box"></span>
+</div>
+
+<div *ngIf="listView">
+  <app-list-view
+    [contentList]="contentList"
+  >
+  </app-list-view>
+</div>
+
+<div *ngIf="!listView">
+  <app-content 
+    *ngFor="let c of contentList" 
+    [content] = "c"
+  >
+  </app-content>
 </div>

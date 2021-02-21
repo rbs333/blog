@@ -1,0 +1,10 @@
+<h2>Capitalism!</h2>
+
+<div class="productWrapper">
+  <div *ngFor="let p of products">
+    <h2>{{p.name}}</h2>
+    <img src="{{p.image}}"/>
+    <p>${{p.amount/100}} - {{p.description}}</p>
+    <button class="buyBtn" (click)="openModal(p)">Purchase</button>
+  </div>
+</div>

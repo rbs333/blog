@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
-import { ContentComponent } from './content.component';
+import { CheckoutElementComponent } from './checkout-element.component';
 
-describe('ContentComponent', () => {
-  let component: ContentComponent;
-  let fixture: ComponentFixture<ContentComponent>;
+describe('CheckoutElementComponent', () => {
+  let component: CheckoutElementComponent;
+  let fixture: ComponentFixture<CheckoutElementComponent>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ ContentComponent ]
+      declarations: [ CheckoutElementComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ContentComponent);
+    fixture = TestBed.createComponent(CheckoutElementComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

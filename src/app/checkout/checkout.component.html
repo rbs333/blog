@@ -1,0 +1,6 @@
+<button (click)="checkout($event)">
+  Buy for ${{amount/100}}
+</button>
+
+<div *ngIf="loading">Loading...</div>
+<pre *ngIf="confirmation">{{confirmation | json}}</pre>

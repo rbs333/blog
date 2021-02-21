@@ -1,0 +1,29 @@
+.productWrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: 1rem 0;
+}
+
+.productWrapper div {
+  max-width: 30rem;
+}
+
+h2 {
+  margin: 1rem 0;
+}
+
+.productWrapper img {
+  max-width: 100%;
+}
+
+.productWrapper button {
+  float: right;
+  margin-bottom: 1rem;
+}
+
+.productWrapper p {
+  height: 5rem;
+  padding: .5rem 0;
+  font-size: 1.25rem;
+}

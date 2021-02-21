@@ -1,0 +1,47 @@
+
+<div class="newsPanel">
+  <h2>News: album coming Spring 2021!</h2>
+  <div>
+    Why this website? Read the 
+    <a routerLink="/manifesto" routerLinkActive="active">manifesto</a>.
+  </div>
+</div>
+
+<div class="divider">
+  <span class="box"></span>
+</div>
+
+<h2>{{video1.title}}</h2>
+<div class="videoWrapper">
+  <iframe 
+    [src]="video1.video | safe"
+    class="displayVideo"
+  ></iframe>
+</div>
+<div class="pageLink">
+  <a 
+    routerLink="/archive/{{video1.title}}"
+  >
+   [ full lyrics ]
+  </a>
+</div>
+
+<div class="divider">
+  <span class="box"></span>
+</div>
+
+<div class="displayPoem">
+  <app-content 
+    [content]="poem1"
+    [showDivider]="false"
+  ></app-content>
+</div>
+
+<div class="pageLink">
+  <a 
+    routerLink="/archive"
+  >
+    [ more songs & stuff! ]
+  </a>
+</div>
+

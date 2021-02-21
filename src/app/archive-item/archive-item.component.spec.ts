@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
-import { ContentComponent } from './content.component';
+import { ArchiveItemComponent } from './archive-item.component';
 
-describe('ContentComponent', () => {
-  let component: ContentComponent;
-  let fixture: ComponentFixture<ContentComponent>;
+describe('ArchiveItemComponent', () => {
+  let component: ArchiveItemComponent;
+  let fixture: ComponentFixture<ArchiveItemComponent>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ ContentComponent ]
+      declarations: [ ArchiveItemComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ContentComponent);
+    fixture = TestBed.createComponent(ArchiveItemComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
