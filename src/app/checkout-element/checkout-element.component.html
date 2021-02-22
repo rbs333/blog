@@ -139,6 +139,13 @@
   <div #cardElement></div>
   <p>{{cardErrors}}</p>
   <br>
-  <button class="submitBtn" type="submit">Submit!</button>
+  <span *ngIf="loading">Loading...</span>
+  <button 
+    class="submitBtn" 
+    type="submit"
+    *ngIf="!loading"
+  >
+    Submit!
+  </button>
   <p>{{confirmation}}</p>
 </form>
