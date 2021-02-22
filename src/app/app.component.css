@@ -19,6 +19,23 @@
     padding: 0 .25rem;
 }
 
+.header nav {
+    display: flex;
+    justify-content: space-around;
+    font-size: 1.35rem;
+    padding-top: .75rem;
+}
+
+@media only screen and (max-width: 800px) {
+    .header a {
+        padding: 0 .15rem;
+    }
+
+    .header nav {
+        font-size: 1.15rem;
+    }
+}
+
 .header a:hover {
     color:  tan;
 }
@@ -29,14 +46,6 @@
 
 .title .subHeading {
     font-style: italic;
-}
-
-.header nav {
-    display: flex;
-    justify-content: space-around;
-    justify-content: space-between;
-    font-size: 1.35rem;
-    padding-top: .75rem;
 }
 
 .balloonIcon {

@@ -18,13 +18,13 @@ export class ShopComponent implements OnInit {
       "image": "https://rbs-storage.s3.amazonaws.com/website+content/pancake_pic.jpg",
       "isShirt": false
     },
-    {
-      "name": "Capable of Being Wrong T-shirt",
-      "amount": "2500",
-      "description": "T-shirt inspired by the song Smoke from Thank God for Monday",
-      "image": "https://rbs-storage.s3.amazonaws.com/website+content/shirt-mock-blue.png",
-      "isShirt": true
-    }
+    // {
+    //   "name": "Capable of Being Wrong T-shirt",
+    //   "amount": "2500",
+    //   "description": "T-shirt inspired by the song Smoke from Thank God for Monday",
+    //   "image": "https://rbs-storage.s3.amazonaws.com/website+content/shirt-mock-blue.png",
+    //   "isShirt": true
+    // }
   ]
 
   modalRef: NgModel;

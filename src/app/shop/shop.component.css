@@ -23,7 +23,7 @@ h2 {
 }
 
 .productWrapper p {
-  height: 5rem;
+  min-height: max-content;
   padding: .5rem 0;
   font-size: 1.25rem;
 }
