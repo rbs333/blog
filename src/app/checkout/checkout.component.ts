@@ -1,6 +1,9 @@
 import { Component, OnInit, Input, HostListener } from '@angular/core';
 import { StripeService } from '../services/stripe.service';
-import * as config from '../../../config.json';
+import * as config from '../../../public-config.json';
+
+
+
 
 // import types if desire to strong type
 declare var StripeCheckout;
