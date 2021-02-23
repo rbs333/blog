@@ -2,7 +2,7 @@ import { Component, OnInit, Input, ViewChild, ElementRef } from '@angular/core';
 import { StripeService } from '../services/stripe.service';
 import { Validators, FormGroup, FormControl } from '@angular/forms';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
-import * as config from '../../../config.json';
+import * as config from '../../../public-config.json';
 
 declare var Stripe;
 

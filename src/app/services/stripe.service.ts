@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import * as config from '../../../config.json';
+import * as config from '../../../public-config.json';
 import { catchError } from 'rxjs/operators';
 import { throwError } from 'rxjs';
 
