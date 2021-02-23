@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Content } from '../model/content';
 import { map } from 'rxjs/operators';
-import * as config from '../../../public-config.json';
+import * as config from '../../assets/public-config.json';
 
 const API_URL:string = config.api_url;
 
