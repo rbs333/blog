@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ContentService } from '../services/content-service.service';
+import { Content } from '../model/content';
 
 @Component({
   selector: 'app-home',
@@ -7,14 +8,15 @@ import { ContentService } from '../services/content-service.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  public video1;
-  public poem1;
+  public video1: any;
+  public poem1: any;
 
   constructor(private contentService: ContentService) { 
     this.contentService.getContentByTitle("Breakfast")
       .subscribe((res: any) => {
         this.poem1 = res.Item;
       });
+
     this.video1 = this.contentService.getContentByTitle("Thank God for Monday")
       .subscribe((res: any) => {
         this.video1 = res.Item;

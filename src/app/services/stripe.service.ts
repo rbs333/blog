@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import * as config from '../../assets/public-config.json';
 import { catchError } from 'rxjs/operators';
 import { throwError } from 'rxjs';
+import { environment } from '../../environments/environment';
 
-const STRIPE_LAMBDA_URL: string = config.charge_url;
-const LAMBDA_URL: string = config.api_url;
+const STRIPE_LAMBDA_URL: string = environment.CHARGE_URL;
+const LAMBDA_URL: string = environment.API_URL;
 
 @Injectable({
   providedIn: 'root'
