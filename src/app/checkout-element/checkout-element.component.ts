@@ -2,7 +2,7 @@ import { Component, OnInit, Input, ViewChild, ElementRef } from '@angular/core';
 import { StripeService } from '../services/stripe.service';
 import { Validators, FormGroup, FormControl } from '@angular/forms';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
-import * as config from '../../assets/public-config.json';
+import { environment } from '../../environments/environment';
 
 declare var Stripe;
 
@@ -45,7 +45,7 @@ export class CheckoutElementComponent implements OnInit {
 
 
   ngOnInit() {
-    this.stripe = Stripe(config.public_stripe_key);
+    this.stripe = Stripe(environment.PUBLIC_STRIPE_KEY);
     const elements = this.stripe.elements();
 
     this.card = elements.create('card')

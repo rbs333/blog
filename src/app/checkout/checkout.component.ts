@@ -1,9 +1,6 @@
 import { Component, OnInit, Input, HostListener } from '@angular/core';
 import { StripeService } from '../services/stripe.service';
-import * as config from '../../assets/public-config.json';
-
-
-
+import { environment } from '../../environments/environment';
 
 // import types if desire to strong type
 declare var StripeCheckout;
@@ -26,7 +23,7 @@ export class CheckoutComponent implements OnInit {
   ngOnInit() {
     this.handler = StripeCheckout.configure({ 
       // https://stripe.com/docs/keys - secret keys hidden, publishable keys available for JS
-      key: config.public_stripe_key,
+      key: environment.PUBLIC_STRIPE_KEY,
       locale: 'auto',
       source: async (source) => {
         console.log(source)

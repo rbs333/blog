@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Content } from '../model/content';
 
 @Component({
   selector: 'app-content',
@@ -11,7 +12,7 @@ export class ContentComponent implements OnInit {
 
   ngOnInit() {}
 
-  @Input() content: any;
+  @Input() content: Content;
   @Input() showDivider = true;
 
   toggleShow = (id) => {
