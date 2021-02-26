@@ -14,12 +14,12 @@ jobs:
       - uses: actions/setup-node@master
         with:
           node-version: 12
-      - run: npm install
-      - run: npm run build:ci
-        with:
+        env:
           PUBLIC_STRIPE_KEY: ${{ secrets.PUBLIC_STRIPE_KEY }}
           CHARGE_URL: ${{ secrets.CHARGE_URL }}
           API_URL: ${{ secrets.API_URL }}
+      - run: npm install
+      - run: npm run build:ci
       - uses: aws-actions/configure-aws-credentials@v1
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}

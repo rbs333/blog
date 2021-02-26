@@ -50,4 +50,8 @@ const environmentFileContent = `
   };
 `;
 
+console.log("\n charge url ", process.env.CHARGE_URL)
+console.log("\n stripe ", process.env.PUBLIC_STRIPE_KEY)
+console.log("\n api ", process.env.API_URL)
+
 writeFileUsingFS(targetPath, environmentFileContent); // appending data into the target file
