@@ -3,7 +3,8 @@ content.json
 config.json
 environment.prod.ts
 environment.ts
-.env 
+.env
+buildspec.yml
 
 
 # compiled output
