@@ -18,6 +18,7 @@ jobs:
           PUBLIC_STRIPE_KEY: ${{ secrets.PUBLIC_STRIPE_KEY }}
           CHARGE_URL: ${{ secrets.CHARGE_URL }}
           API_URL: ${{ secrets.API_URL }}
+      - run: sh src/assets/scripts/makeEnv.sh prod ${{ secrets.PUBLIC_STRIPE_KEY }} ${{ secrets.CHARGE_URL }} ${{ secrets.API_URL }}
       - run: npm install
       - run: npm run build:ci
       - uses: aws-actions/configure-aws-credentials@v1
