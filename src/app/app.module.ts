@@ -17,6 +17,7 @@ import { ShopComponent } from './shop/shop.component';
 import { ProductFormComponent } from './product-form/product-form.component';
 import { CheckoutElementComponent } from './checkout-element/checkout-element.component';
 import { HomeComponent } from './home/home.component';
+import { PancakeComponent } from './pancake/pancake.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { HomeComponent } from './home/home.component';
     ShopComponent,
     ProductFormComponent,
     CheckoutElementComponent,
-    HomeComponent
+    HomeComponent,
+    PancakeComponent
   ],
   imports: [
     BrowserModule,
