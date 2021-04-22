@@ -18,7 +18,7 @@ export class CheckoutElementComponent implements OnInit {
   stripe;
   card;
   cardErrors;
-
+  is_venmo = false;
   loading = false;
   confirmation;
 
@@ -36,6 +36,7 @@ export class CheckoutElementComponent implements OnInit {
       zip: new FormControl("", [Validators.required,
                                 Validators.minLength(5)]),
       shirt_size: new FormControl("", Validators.minLength(1)),
+      venmo_handle: new FormControl(false, Validators.required),
     })
   }
 
@@ -57,6 +58,7 @@ export class CheckoutElementComponent implements OnInit {
   }
 
   get name() { return this.formGroup.get('name'); }
+  get venmo_handle() { return this.formGroup.get('venmo_handle'); }
   get email() { return this.formGroup.get('email'); }
   get address() { return this.formGroup.get('address'); }
   get city() { return this.formGroup.get('city'); }
@@ -64,6 +66,9 @@ export class CheckoutElementComponent implements OnInit {
   get zip() { return this.formGroup.get('zip'); }
   get shirt_size() { return this.formGroup.get('shirt_size'); }
 
+  togglePayment = () => {
+    this.is_venmo = !this.is_venmo;
+  };
 
   async handleForm(e, formData) {
     e.preventDefault();
@@ -90,10 +95,22 @@ export class CheckoutElementComponent implements OnInit {
             (res) => {
               this.confirmation = res;
               this.loading = false;
-              this.activeComponent.dismiss()
+              this.activeComponent.dismiss();
               alert("Thank you! Payment Received.")
-          });
-      })
+          },
+            error => {
+              this.loading = false;
+              this.activeComponent.dismiss();
+              alert("Something went wrong :(")
+            }
+          );
+      },
+      error => {
+        this.activeComponent.dismiss();
+        alert("Something went wrong :(");
+        this.loading = false;
+      }
+      )
     }
   }
 }

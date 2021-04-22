@@ -134,10 +134,54 @@
     </div>
   </div>
 
+  <br><h2>Choose payment method</h2><br>
+  <div [formGroup]="formGroup" class="inputDiv">
+    <div>
+      <label for="venmo">venmo</label>
+      <input 
+        type="radio"
+        id="venmo"
+        formControlName="is_venmo"
+        value="true"
+        name="is_venmo"
+        class="form-control"
+        (change)="togglePayment()"
+      >
+    </div>
+    
+    <div>
+      <label for="card">credit card</label>
+      <input 
+        type="radio"
+        id="card"
+        formControlName="is_venmo"
+        value="false"
+        name="is_venmo"
+        class="form-control"
+        (change)="togglePayment()"
+        checked
+      >
+    </div>
+
+    <div 
+      *ngIf="is_venmo.invalid && (is_venmo.dirty || is_venmo.touched)"
+    >
+      <div *ngIf="is_venmo.errors.required" class="textAlert">*required</div>
+    </div>
+  </div>
+
   <br>
-  <h2>Card Information</h2>
-  <div #cardElement></div>
-  <p>{{cardErrors}}</p>
+
+  <div *ngIf="is_venmo">
+    <input type="test" placeholder="venmo_handler">
+  </div>
+
+  <div [hidden]="is_venmo">
+    <h2>Card Information</h2>
+    <div #cardElement></div>
+    <p>{{cardErrors}}</p>
+  </div>
+  
   <br>
   <span *ngIf="loading">Loading...</span>
   <button 
