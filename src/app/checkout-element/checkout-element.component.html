@@ -7,29 +7,23 @@
   #formDir="ngForm"
 >
   <div class="formHeader">
-    <h1>{{product.name}}</h1>
+    <div>
+      <h1>{{product.name}}</h1>
+      <span>Price: ${{product.amount/100}}</span>
+    </div>
+    
     <img src="{{product.image}}">
   </div>
-  
-  <p>Price: ${{product.amount/100}}</p>
 
-  <div *ngIf="product.isShirt" [formGroup]="formGroup" class="inputDiv">
-    <label for="shirt_size">Shirt Size:</label>
-    <select id="shirt_size" name="shirt_sizes">
-      <option value="">None Selected</option>
-      <option value="S">S</option>
-      <option value="M">M</option>
-      <option value="L">L</option>
-      <option value="XL">XL</option>
-    </select>
-
-    <div 
-      *ngIf="shirt_size.invalid && (shirt_size.dirty || shirt_size.touched)"
-    >
-      <div *ngIf="shirt_size.errors.required" class="textAlert">*required</div>
-    </div>
-  </div>
   <br>
+
+  <p *ngIf="!isVenmo">
+    No card? <a class="toggle" (click)="togglePayment()">[ pay with venmo ]</a> <br>
+  </p>
+
+  <p *ngIf="isVenmo">
+    No venmo? <a class="toggle" (click)="togglePayment()">[ pay with card ]</a>
+  </p>
 
   <h2>Shipping Information</h2>
   <div>Can only ship to the US! Email me and we'll work something out if in a different country.</div>
@@ -134,49 +128,25 @@
     </div>
   </div>
 
-  <br><h2>Choose payment method</h2><br>
-  <div [formGroup]="formGroup" class="inputDiv">
-    <div>
-      <label for="venmo">venmo</label>
-      <input 
-        type="radio"
-        id="venmo"
-        formControlName="is_venmo"
-        value="true"
-        name="is_venmo"
-        class="form-control"
-        (change)="togglePayment()"
-      >
-    </div>
-    
-    <div>
-      <label for="card">credit card</label>
-      <input 
-        type="radio"
-        id="card"
-        formControlName="is_venmo"
-        value="false"
-        name="is_venmo"
-        class="form-control"
-        (change)="togglePayment()"
-        checked
-      >
-    </div>
-
-    <div 
-      *ngIf="is_venmo.invalid && (is_venmo.dirty || is_venmo.touched)"
-    >
-      <div *ngIf="is_venmo.errors.required" class="textAlert">*required</div>
-    </div>
-  </div>
-
   <br>
 
-  <div *ngIf="is_venmo">
-    <input type="test" placeholder="venmo_handler">
+  <div [formGroup]="formGroup" class="inputDiv" *ngIf="isVenmo">
+    <label for="venmoHandle">venmo</label>
+    <input 
+      type="text"
+      id="venmoHandle"
+      placeholder="jane-smith-9"
+      formControlName="venmoHandle"
+      class="form-control"
+    >
+    <div 
+      *ngIf="venmoHandle.invalid && (venmoHandle.dirty || venmoHandle.touched)"
+    >
+      <div *ngIf="venmoHandle.errors.required" class="textAlert">*required</div>
+    </div>
   </div>
 
-  <div [hidden]="is_venmo">
+  <div [hidden]="isVenmo">
     <h2>Card Information</h2>
     <div #cardElement></div>
     <p>{{cardErrors}}</p>
