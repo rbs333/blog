@@ -38,9 +38,6 @@ export class CheckoutElementComponent implements OnInit {
                                 Validators.minLength(5)]),
       venmoHandle: new FormControl("", Validators.required),
     })
-
-    console.log(window.screen.width)
-    console.log(this.mobile)
   }
 
   @Input() product: any;
