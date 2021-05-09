@@ -26,3 +26,18 @@
 .textAlert {
   color: red;
 }
+
+.radioBtns {
+  display: flex;
+}
+
+.toggle {
+  padding: .5rem;
+  background-color: beige;
+  cursor: pointer;
+}
+
+.toggle:hover {
+  background-color: tan;
+  color: white;
+}

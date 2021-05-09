@@ -17,7 +17,7 @@ export class HomeComponent implements OnInit {
         this.poem1 = res.Item;
       });
 
-    this.video1 = this.contentService.getContentByTitle("Thank God for Monday")
+    this.video1 = this.contentService.getContentByTitle("Bored")
       .subscribe((res: any) => {
         this.video1 = res.Item;
       });
