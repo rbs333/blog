@@ -18,8 +18,8 @@ export class CheckoutElementComponent implements OnInit {
   stripe;
   card;
   cardErrors;
-  mobile = false;
-  isVenmo = false;
+  mobile = window.screen.width > 800? false : true;
+  isVenmo = this.mobile ? true : false;
   loading = false;
   confirmation;
 
@@ -36,9 +36,11 @@ export class CheckoutElementComponent implements OnInit {
                                   Validators.maxLength(2)]),
       zip: new FormControl("", [Validators.required,
                                 Validators.minLength(5)]),
-      shirtSize: new FormControl("", Validators.minLength(1)),
       venmoHandle: new FormControl("", Validators.required),
     })
+
+    console.log(window.screen.width)
+    console.log(this.mobile)
   }
 
   @Input() product: any;
@@ -65,7 +67,6 @@ export class CheckoutElementComponent implements OnInit {
   get city() { return this.formGroup.get('city'); }
   get state() { return this.formGroup.get('state'); }
   get zip() { return this.formGroup.get('zip'); }
-  get shirtSize() { return this.formGroup.get('shirtSize'); }
 
   togglePayment = () => {
     this.isVenmo = !this.isVenmo;

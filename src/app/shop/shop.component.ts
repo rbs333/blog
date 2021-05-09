@@ -10,7 +10,7 @@ import { NgModel } from '@angular/forms';
 })
 export class ShopComponent implements OnInit {
 
-  // todo: right this as a service to bring in requirements.
+  // todo: write this as a service to bring in requirements.
   products = [
     {
       "name": "BobbyCake Mix",

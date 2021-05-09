@@ -17,13 +17,15 @@
 
   <br>
 
-  <p *ngIf="!isVenmo">
-    No card? <a class="toggle" (click)="togglePayment()">[ pay with venmo ]</a> <br>
-  </p>
-
-  <p *ngIf="isVenmo">
-    No venmo? <a class="toggle" (click)="togglePayment()">[ pay with card ]</a>
-  </p>
+  <div *ngIf="!mobile">
+    <p *ngIf="!isVenmo">
+      No card? <a class="toggle" (click)="togglePayment()">[ pay with venmo ]</a> <br>
+    </p>
+  
+    <p *ngIf="isVenmo">
+      No venmo? <a class="toggle" (click)="togglePayment()">[ pay with card ]</a>
+    </p>
+  </div>
 
   <h2>Shipping Information</h2>
   <div>Can only ship to the US! Email me and we'll work something out if in a different country.</div>
@@ -146,7 +148,7 @@
     </div>
   </div>
 
-  <div [hidden]="isVenmo">
+  <div [hidden]="isVenmo || mobile">
     <h2>Card Information</h2>
     <div #cardElement></div>
     <p>{{cardErrors}}</p>
