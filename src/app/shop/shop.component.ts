@@ -13,6 +13,13 @@ export class ShopComponent implements OnInit {
   // todo: write this as a service to bring in requirements.
   products = [
     {
+      "name": "Thank God for Monday CD",
+      "amount": "1000",
+      "description": "For lovers of the material world, party like it's the 90s with the sick CD!",
+      "image": "https://rbs-storage.s3.amazonaws.com/website+content/CD_img.png",
+      "isShirt": false
+    },
+    {
       "name": "BobbyCake Mix",
       "amount": "2000",
       "description": "A tradition forged over years of pancakes Saturdays. An order ships with 32oz of mix and makes 24-32 pancakes!",
