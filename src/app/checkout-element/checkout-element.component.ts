@@ -19,7 +19,9 @@ export class CheckoutElementComponent implements OnInit {
   card;
   cardErrors;
   mobile = window.screen.width > 800? false : true;
-  isVenmo = this.mobile ? true : false;
+  // isVenmo = this.mobile ? true : false;
+  // default to venmo for now
+  isVenmo = true;
   loading = false;
   confirmation;
 
