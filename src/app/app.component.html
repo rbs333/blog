@@ -1,36 +1,39 @@
 <div>
-    <div class="header stdPad">
-        <div class="titlebox">
-            <img 
-                src="https://rbs-storage.s3.amazonaws.com/website+content/balloonboy_justboy_white.png"
-                class="balloonIcon"
-            >
-            <div>
-                <span class="title">Virginia Boy Inc.</span><br>
-                <span class="subHeading">Songs & Stuff by Robert Shelton</span>
-                <nav class="btns">
-                    <a routerLink="/" routerLinkActive="active">[ home ]</a>
-                    <a routerLink="/archive" routerLinkActive="active">[ archive ]</a>
-                    <a routerLink="/shop" routerLinkActive="active">[ shop ]</a>
-                </nav>
-            </div>
-        </div>
+  <div class="header stdPad">
+    <div class="titlebox">
+      <img
+        src="https://rbs-storage.s3.amazonaws.com/website+content/balloonboy_justboy_white.png"
+        class="balloonIcon"
+      />
+      <div>
+        <span class="title">Virginia Boy Inc.</span><br />
+        <span class="subHeading">Songs & Stuff by Robert Shelton</span>
+        <nav class="btns">
+          <a routerLink="/" routerLinkActive="active">[ home ]</a>
+          <a routerLink="/archive" routerLinkActive="active">[ archive ]</a>
+          <!-- Nothing to sell right now -->
+          <!-- <a routerLink="/shop" routerLinkActive="active">[ shop ]</a> -->
+        </nav>
+      </div>
     </div>
+  </div>
 
-    <div class="socialLinks">
-        <a href="https://open.spotify.com/artist/4iaMYGBm44pgyKT3YDGttC?si=LU-uVdLlQ-im_h-teL6msg">
-            <img src="assets/spotify.png"/>
-        </a>
+  <div class="socialLinks">
+    <a
+      href="https://open.spotify.com/artist/4iaMYGBm44pgyKT3YDGttC?si=LU-uVdLlQ-im_h-teL6msg"
+    >
+      <img src="assets/spotify.png" />
+    </a>
+  </div>
+
+  <div class="gutters">
+    <router-outlet></router-outlet>
+  </div>
+
+  <div class="footer">
+    <div class="contact">
+      - contact - <br />
+      virginiaboymusic@gmail.com | @rockbobsterstuff
     </div>
-    
-    <div class="gutters">
-        <router-outlet></router-outlet>
-    </div>
-    
-    <div class="footer">
-        <div class="contact">
-            - contact - <br>
-            virginiaboymusic@gmail.com | @rockbobsterstuff
-        </div>
-    </div>
+  </div>
 </div>
