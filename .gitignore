@@ -2,7 +2,6 @@
 content.json
 config.json
 environment.prod.ts
-environment.ts
 .env
 buildspec.yml
 
